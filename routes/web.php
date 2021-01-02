@@ -18,11 +18,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::match(['get', 'post'], '/category', 'PagesController@category');
     Route::match(['get', 'post'], '/candidate', 'PagesController@candidate');
     Route::get('/', 'PagesController@index')->name('home');
-
-    // register
-    Route::get('register', 'Auth\RegisterController@register');
-    Route::post('register', 'Auth\RegisterController@store')->name('register');
 });
+// register
+Route::get('register', 'Auth\RegisterController@register');
+Route::post('register', 'Auth\RegisterController@store')->name('register');
+
 
 // login
 Route::get('login', 'Auth\LoginController@login')->name('login');
